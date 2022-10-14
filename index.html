@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
     <title>Pricing component</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
             <div class="price">
             <h2>100K PAGEVIEWS</h2>
             <form>
-                <input  type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <input  type="range" min="1" max="100" value="50" class="slider" id="myRange" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))">
             </form>
             </div>
 
