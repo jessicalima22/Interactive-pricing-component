@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: hsl(230deg, 100%, 99%);
+  background-color: white;
   color: hsl(225deg, 20%, 60%);
   font-family: "Manrope", sans-serif;
   height: 100vh;
@@ -17,8 +17,10 @@ body {
 main {
   background-image: url(images/bg-pattern.svg);
   background-repeat: no-repeat;
-  background-position: 0 -50px;
-  min-width: 370px;
+  background-position: 0 -75px;
+  background-color: hsl(0deg, 0%, 100%);
+  width: 70%;
+  min-width: 340px;
   height: 85%;
   display: flex;
   flex-direction: column;
@@ -28,48 +30,203 @@ main {
 .top {
   background-image: url(images/pattern-circles.svg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 50% 50px;
+  background-size: 130px;
   text-align: center;
-  padding-top: 5.5rem;
+  padding-top: 5rem;
   width: 100%;
-  height: 29%;
-  font-size: 0.8rem;
+  height: 27%;
+  font-size: 0.75rem;
 }
 
 .top h1 {
   color: hsl(227deg, 35%, 25%);
-  letter-spacing: 0.02rem;
   font-weight: 800;
 }
 
 .top p {
-  width: 11rem;
-  margin: 1rem auto 0 auto;
-  line-height: 1.5rem;
+  width: 10rem;
+  margin: 0.5rem auto 0 auto;
+  line-height: 1.3rem;
 }
 
 .down {
   width: 88%;
-  height: 60%;
+  height: 52%;
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 5px 30px rgba(0, 0, 100, 0.055);
 }
 
-.price h2 {
-  font-size: 0.8rem;
+.priceInput {
+  width: 100%;
+}
+
+.priceInput h2 {
+  font-size: 0.7rem;
   letter-spacing: 0.07rem;
   font-weight: 800;
-  padding: 2rem 0;
+  padding: 2rem 0 1.5rem 0;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.price h3 {
+  font-size: 1.8rem;
+  color: hsl(227deg, 35%, 25%);
+}
+
+.frequency {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.7rem;
+  margin-top: 2rem;
+  height: 12%;
+}
+.frequency p {
+  margin: 0 0.4rem 0;
+}
+
+.discount {
+  background-color: hsl(14deg, 92%, 95%);
+  color: hsl(15deg, 100%, 70%);
+  border-radius: 20px;
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  height: 1rem;
+  line-height: 1rem;
+  padding: 0 6px;
+}
+
+.list {
+  border-top: 2px solid hsl(233deg, 36%, 95%);
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+ul {
+  padding-top: 1.2rem;
+}
+
+li {
+  list-style-type: none;
+  padding-bottom: 0.6rem;
+}
+
+li::before {
+  background-image: url(images/icon-check.svg);
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 10px;
+  height: 7px;
+  margin-right: 0.5rem;
+  content: "";
+}
+
+button {
+  background-color: hsl(227deg, 35%, 25%);
+  color: hsl(226deg, 100%, 87%);
+  width: 9.5rem;
+  height: 2.2rem;
+  border-radius: 20px;
+  border: none;
+  margin-top: 1.2rem;
+  cursor: pointer;
+}
+
+/*toggle buttons*/
+.tgl {
+  display: none;
+}
+.tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+.tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {
+  background: none;
+}
+.tgl::selection, .tgl:after::selection, .tgl:before::selection, .tgl *::selection, .tgl *:after::selection, .tgl *:before::selection, .tgl + .tgl-btn::selection {
+  background: none;
+}
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 2.5rem;
+  height: 1.3rem;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 40%;
+  height: 80%;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+.tgl + .tgl-btn:before {
+  display: none;
+}
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+
+.tgl-ios + .tgl-btn {
+  background: hsl(223deg, 50%, 87%);
+  border-radius: 2rem;
+  padding: 2px;
+  transition: all 0.4s ease;
+}
+.tgl-ios + .tgl-btn:after {
+  border-radius: 2em;
+  background: #fbfbfb;
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+.tgl-ios + .tgl-btn:hover:after {
+  will-change: padding;
+}
+.tgl-ios + .tgl-btn:active {
+  box-shadow: inset 0 0 0 2em #e8eae9;
+}
+.tgl-ios + .tgl-btn:active:after {
+  padding-right: 0.8em;
+}
+.tgl-ios:checked + .tgl-btn {
+  background: hsl(174deg, 86%, 45%);
+}
+.tgl-ios:checked + .tgl-btn:active {
+  box-shadow: none;
+}
+.tgl-ios:checked + .tgl-btn:active:after {
+  margin-left: -0.8em;
 }
 
 .slider {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 100%;
-  height: 15px;
-  border-radius: 5px;
+  width: 85%;
+  height: 0.5rem;
+  border-radius: 0.3rem;
   background: linear-gradient(to right, hsl(174deg, 77%, 80%), black);
   opacity: 0.7;
   transition: opacity 3s;
@@ -81,15 +238,14 @@ main {
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-          appearance: none;
-  width: 23px;
-  height: 24px;
+  width: 2rem;
+  height: 2rem;
   border: 0;
   background: hsl(174deg, 86%, 45%) url(images/icon-slider.svg) no-repeat;
   background-position: center;
-  cursor: ew-resize;
+  cursor: pointer;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 1.2rem;
 }
 
 .slider::-moz-range-thumb {

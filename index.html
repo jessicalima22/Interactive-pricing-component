@@ -18,22 +18,33 @@
         </section>
 
         <section class="down">
-            <div class="price">
-            <h2>100K PAGEVIEWS</h2>
-            <form>
-                <input  type="range" min="1" max="100" value="50" class="slider" id="myRange" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))">
-            </form>
+            <div class="priceInput">
+                <h2>100K PAGEVIEWS</h2>
+                <form>
+                    <input  type="range" min="1" max="100" value="50" class="slider" id="myRange" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))">
+                 </form>
             </div>
+            
+            <div class="price"><h3>$16.00</h3>/month</div>
 
-            <div class="information">
+            <div class="frequency">
+                <p>Monthly Billing</p>
+                <input class="tgl tgl-ios" id="cb2" type="checkbox">
+                <label class="tgl-btn" for="cb2"></label>
+                <p>Yearly Billing</p>
+                <p class="discount">-25%</p>
+            </div>
+              
+
+            <div class="list">
                 <ul>
                     <li>Unlimited websites</li>
-                    <li>100& data ownership</li>
+                    <li>100% data ownership</li>
                     <li>Email reports</li>
                 </ul>
-
-                <button>Start my trial</button>
             </div>
+                <button>Start my trial</button>
+            
 
 
         </section>
