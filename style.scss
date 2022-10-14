@@ -5,9 +5,94 @@
   }
   
   body {
-    background-color: hsl(230, 100%, 99%);
+    background-color:hsl(230, 100%, 99%);
     color: hsl(225, 20%, 60%);
+    font-family: 'Manrope', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  main{
+    background-image: url(images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    background-position: 0 -50px;
+    min-width: 370px;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.top{
+  background-image: url(images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  padding-top: 5.5rem;
+  width: 100%;
+  height: 29%;
+  font-size: 0.8rem;
+}
+
+.top h1{
+  color: hsl(227, 35%, 25%);
+  letter-spacing: 0.02rem;
+  font-weight: 800
+}
+
+.top p{
+  width: 11rem;
+  margin: 1rem auto 0 auto;
+  line-height: 1.5rem;
+}
+
+.down{
+  width: 88%;
+  height: 60%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.price h2{
+  font-size: 0.8rem;
+  letter-spacing: 0.07rem;
+  font-weight: 800;
+  padding: 2rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   .slider {
     appearance: none;
@@ -22,11 +107,11 @@
   
   .slider::-webkit-slider-runnable-track {
     accent-color: red;
-    -webkit-appearance: none;
+ 
   }
   
   .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
+    
     appearance: none;
     width: 23px;
     height: 24px;
