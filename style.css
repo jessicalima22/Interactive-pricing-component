@@ -35,7 +35,7 @@ main {
   text-align: center;
   padding-top: 5rem;
   width: 100%;
-  height: 27%;
+  height: 30%;
   font-size: 0.75rem;
 }
 
@@ -52,7 +52,7 @@ main {
 
 .down {
   width: 88%;
-  height: 52%;
+  height: 63%;
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 1rem;
   text-align: center;
@@ -77,7 +77,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 1.5rem;
+  margin-top: 2.2rem;
   font-size: 0.8rem;
 }
 
