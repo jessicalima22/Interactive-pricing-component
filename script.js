@@ -2,44 +2,37 @@ const input = document.getElementById('range');
 const output = document.getElementById('price');
 const pageviews = document.getElementById('pageviews');
 const arrayInitialPrices = ['8', '12', '16', '24', '36'];
-const arrayPageviews = ['10K','50K','100K','500K','1M',]
+const arrayPageviews = ['10K','50K','100K','500K','1M',];
 
+
+
+//input range
 
 input.addEventListener('input', function (){
     inputValue = input.value;
+        output.innerText = arrayInitialPrices[inputValue];
+        pageviews.innerText = arrayPageviews[inputValue];
+    });
 
-    if(inputValue==1){
-        output.innerText = arrayInitialPrices[0];
-        pageviews.innerText = arrayPageviews[0];
-    } else if(inputValue==2){
-        output.innerText = arrayInitialPrices[1];
-        pageviews.innerText = arrayPageviews[1];
-    } else if(inputValue==3){
-        output.innerText = arrayInitialPrices[2];
-        pageviews.innerText = arrayPageviews[2];
-    } else if(inputValue==4){
-        output.innerText = arrayInitialPrices[3];
-        pageviews.innerText = arrayPageviews[3];
-    } else if(inputValue==5){
-        output.innerText = arrayInitialPrices[4];
-        pageviews.innerText = arrayPageviews[4];
-    }
-});
+
+
+
+//toggle checked
 
 const toggle = document.getElementById('toggle');
-
-
-toggle.addEventListener('change', function (){
+toggle.addEventListener('click', function (){
     
     const outputValue = output.innerText;
     const price = Number(outputValue);
     const discount = price*0.25;
     const lowerPrice = price - discount;
+    inputValue = input.value;
     console.log(toggle.checked);
+
     if (toggle.checked === true){
     output.innerText = lowerPrice;
     } else { 
-    output.innerText = arrayInitialPrices[0];
+    output.innerText = arrayInitialPrices[inputValue];
     }
 });
 
