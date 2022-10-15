@@ -19,18 +19,18 @@
 
         <section class="down">
             <div class="priceInput">
-                <h2>100K PAGEVIEWS</h2>
+                <h2> <span id="pageviews">10K</span> PAGEVIEWS</h2>
                 <form>
-                    <input  type="range" min="1" max="100" value="50" class="slider" id="myRange" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))">
+                    <input  type="range" id="range" min="1" max="5" value="1" class="slider" id="myRange">
                  </form>
             </div>
             
-            <div class="price"><h3>$16.00</h3>/month</div>
+            <div class="price"><h3>$<span id="price">8</span>.00</h3>/month</div>
 
             <div class="frequency">
                 <p id="monthly">Monthly Billing</p>
-                <input class="tgl tgl-ios" id="cb2" type="checkbox">
-                <label class="tgl-btn" for="cb2"></label>
+                <input class="tgl toggleIos" id="toggle" type="checkbox">
+                <label class="toggleButton" for="toggle"></label>
                 <p id="yearly">Yearly Billing</p>
                 <p class="discount">-25%</p>
             </div>
@@ -49,6 +49,6 @@
 
         </section>
     </main>
-    
+    <script src="script.js"></script>
 </body>
 </html>
