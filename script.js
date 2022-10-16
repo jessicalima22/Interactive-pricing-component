@@ -1,56 +1,61 @@
 const input = document.getElementById('range');
 const output = document.getElementById('price');
 const pageviews = document.getElementById('pageviews');
-const arrayInitialPrices = [8, 12, 16, 24, 36];
-const arrayPageviews = ['10K','50K','100K','500K','1M',];
+let arrayInitialPrices = [8, 12, 16, 24, 36];
+let arrayPageviews = ['10K','50K','100K','500K','1M'];
 inputValue = input.value;
 
+/*To add more values, just change input 'max' on index.html 
+and increase array inicial prices and array pageviews*/
 
 
 
- //input range
 
- input.addEventListener('input', function (){
+ //inicial input range (without toggle first activation)
+input.addEventListener('input', function (){
     inputValue = input.value;
-        output.innerText = arrayInitialPrices[inputValue];
-        pageviews.innerText = arrayPageviews[inputValue];
-    });
-
-//verificar como colocar nome na função change e chamar ela dentro do listener do input
+    output.innerText = arrayInitialPrices[inputValue];
+    pageviews.innerText = arrayPageviews[inputValue];
+});
 
 
-//toggle checked
-
+//control to toggle checked
 const toggle = document.getElementById('toggle')
 toggle.addEventListener('change', function (){
 
-    const discount = arrayInitialPrices.map(item => item * 0.25);
-    const arrayLowerPrices = arrayInitialPrices.map(item => item - discount)
+    //percentage discount
+    const discountPercentage = 0.25;
 
-    console.log(arrayInitialPrices);
-    console.log(discount);
-    console.log(arrayLowerPrices);
+    //array of calculated discount (in money)
+    const discount = arrayInitialPrices.map(item => item * discountPercentage);
 
+    //creating array of final prices with discount (according to lenght of inicial prices)
+    let arrayInitialPricesLenght = arrayInitialPrices.length;
+    let arrayLowerPrices = Array(arrayInitialPricesLenght).fill(0);
+
+    for(let i in arrayLowerPrices){
+        arrayLowerPrices[i] = arrayInitialPrices[i] - discount[i];
+        console.log(arrayLowerPrices);
+    }
     
-    console.log(toggle.checked);
-
+    //changing prices according to toggle (checked or not)
+    if (toggle.checked === false){
+    output.innerText = arrayInitialPrices[inputValue];
+    } else {
+    output.innerText = arrayLowerPrices[inputValue];
+    }
     
-
-        if (toggle.checked === false){
+    //add input Event Listener for continuous check verification while changing input
+    input.addEventListener('input', function (){
+        inputValue = input.value;
         output.innerText = arrayInitialPrices[inputValue];
+        if (toggle.checked === false){
+                output.innerText = arrayInitialPrices[inputValue];
         } else {
-        output.innerText = arrayLowerPrices[inputValue];
+            output.innerText = arrayLowerPrices[inputValue];
         }
-        
     });
+        
+});
 
 
-
-/*- 10K pageviews / $8 per month
-- 50K pageviews / $12 per month
-- 100K pageviews / $16 per month
-- 500k pageviews / $24 per month
-- 1M pageviews / $36 per month
-
-onchange="showVal(this.value)"
-*/
