@@ -6,9 +6,7 @@ let arrayPageviews = ['10K','50K','100K','500K','1M'];
 inputValue = input.value;
 
 /*To add more values, just change input 'max' on index.html 
-and increase array inicial prices and array pageviews*/
-
-
+and increase array inicial prices and array pageviews (only whole numbers with discount)*/
 
 
  //inicial input range (without toggle first activation)
@@ -35,7 +33,6 @@ toggle.addEventListener('change', function (){
 
     for(let i in arrayLowerPrices){
         arrayLowerPrices[i] = arrayInitialPrices[i] - discount[i];
-        console.log(arrayLowerPrices);
     }
     
     //changing prices according to toggle (checked or not)
@@ -58,4 +55,16 @@ toggle.addEventListener('change', function (){
         
 });
 
+
+//progress bar control
+
+input.addEventListener('input', function (){
+
+    let maxInput = Number(input.max);
+    let indexOfIncreease = 100/maxInput;
+    let increaseNumber = indexOfIncreease*inputValue;
+    let color = 'linear-gradient(to right, hsl(174, 77%, 80%) '+increaseNumber+'%,  hsl(224, 65%, 95%)'+increaseNumber+'%)';
+    input.style.background = color;
+
+});
 
