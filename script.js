@@ -3,16 +3,18 @@ const output = document.getElementById('price');
 const pageviews = document.getElementById('pageviews');
 let arrayInitialPrices = [8, 12, 16, 24, 36];
 let arrayPageviews = ['10K','50K','100K','500K','1M'];
+const discountNumber = Number((document.getElementById('discount')).innerHTML);
 inputValue = input.value;
 
 /*To add more values, just change input 'max' on index.html 
-and increase array inicial prices and array pageviews (only whole numbers with discount)*/
+and increase array inicial prices and its correspondent array pageviews (only whole numbers with discount)
+To change the discount tax, just change number on span #discount in HTML*/
 
 
  //inicial input range (without toggle first activation)
 input.addEventListener('input', function (){
     inputValue = input.value;
-    output.innerText = arrayInitialPrices[inputValue];
+    output.innerText = (arrayInitialPrices[inputValue]).toFixed(2);
     pageviews.innerText = arrayPageviews[inputValue];
 });
 
@@ -22,7 +24,8 @@ const toggle = document.getElementById('toggle')
 toggle.addEventListener('change', function (){
 
     //percentage discount
-    const discountPercentage = 0.25;
+    
+    const discountPercentage = discountNumber/100;
 
     //array of calculated discount (in money)
     const discount = arrayInitialPrices.map(item => item * discountPercentage);
@@ -37,22 +40,21 @@ toggle.addEventListener('change', function (){
     
     //changing prices according to toggle (checked or not)
     if (toggle.checked === false){
-    output.innerText = arrayInitialPrices[inputValue];
+    output.innerText = (arrayInitialPrices[inputValue]).toFixed(2);
     } else {
-    output.innerText = arrayLowerPrices[inputValue];
+    output.innerText = (arrayLowerPrices[inputValue]).toFixed(2);
     }
     
     //add input Event Listener for continuous check verification while changing input
     input.addEventListener('input', function (){
         inputValue = input.value;
-        output.innerText = arrayInitialPrices[inputValue];
-        if (toggle.checked === false){
-                output.innerText = arrayInitialPrices[inputValue];
-        } else {
-            output.innerText = arrayLowerPrices[inputValue];
-        }
-    });
         
+        if (toggle.checked === false){
+                output.innerText = (arrayInitialPrices[inputValue]).toFixed(2);
+        } else {
+            output.innerText = (arrayLowerPrices[inputValue]).toFixed(2);
+        }
+    });     
 });
 
 
@@ -65,6 +67,26 @@ input.addEventListener('input', function (){
     let increaseNumber = indexOfIncreease*inputValue;
     let color = 'linear-gradient(to right, hsl(174, 77%, 80%) '+increaseNumber+'%,  hsl(224, 65%, 95%)'+increaseNumber+'%)';
     input.style.background = color;
+});
+
+//Media Queries
+
+const discountParagraph = document.querySelector('.discount');
+
+//Checking window size when loaded
+document.addEventListener('DOMContentLoaded', function(){
+    
+    if (window.matchMedia('(min-width: 767px)').matches){
+        discountParagraph.innerText = '-'+discountNumber+'% discount';
+    };
 
 });
 
+//Checking window size when resize
+window.onresize = function() {
+    if (window.innerWidth < 767) {
+        discountParagraph.innerText = '-'+discountNumber+'%';
+    } else {
+        discountParagraph.innerText = '-'+discountNumber+'% discount';
+    }
+  };
