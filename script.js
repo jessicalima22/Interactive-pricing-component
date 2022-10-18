@@ -69,24 +69,26 @@ input.addEventListener('input', function (){
     input.style.background = color;
 });
 
+
+
+
+
 //Media Queries
 
 const discountParagraph = document.querySelector('.discount');
 
-//Checking window size when loaded
-document.addEventListener('DOMContentLoaded', function(){
-    
-    if (window.matchMedia('(min-width: 767px)').matches){
-        discountParagraph.innerText = '-'+discountNumber+'% discount';
-    };
 
-});
-
-//Checking window size when resize
-window.onresize = function() {
+//All queries changes with JS
+function mediaQuerie767(){
     if (window.innerWidth < 767) {
         discountParagraph.innerText = '-'+discountNumber+'%';
     } else {
         discountParagraph.innerText = '-'+discountNumber+'% discount';
     }
-  };
+};
+
+//Checking window size when 1st loaded
+document.addEventListener('DOMContentLoaded', mediaQuerie767);
+
+//Checking window size when resize
+window.onresize = mediaQuerie767;
