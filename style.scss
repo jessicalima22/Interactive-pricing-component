@@ -39,6 +39,7 @@
   height: 28%;
   font-size: 0.8rem; 
   letter-spacing: 0.02rem;
+  justify-content: center;
 }
 
 .top h1{
@@ -118,7 +119,7 @@ width: 100%;
   font-weight: 800;
   height: 1rem;
   line-height: 1rem;
-  padding: 0 6px;
+  padding: 0rem 0.38rem;
 }
 
 .list{
@@ -325,7 +326,7 @@ margin: auto;
     width: 100%;
     font-weight: 600;
   }
-//border: 2px solid purple;
+
   .down{
   width: 65%;
   height: 45%;
@@ -393,4 +394,57 @@ margin: auto;
     margin-left: 6rem;
   }
 
+}
+
+
+@media (min-width: 1439px){
+  
+  .down{
+    height: 55%;
+  }
+
+  .top{
+    font-size: 1.2rem;
+  }
+
+  .price{
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    margin: 0;
+
+    h3{
+      font-size: 2.7rem;
+      letter-spacing: 0;
+      padding-left: 9rem;
+    }
+  }
+  
+  .frequency{
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    font-size: 1rem;
+
+    .discount{
+      font-size: 0.8rem;
+      height: 1.3rem;
+      margin-top: 0.2rem;
+      padding: 0.1rem 0.3rem;
+    }
+  }
+
+  .list{
+    height: 33%;
+    font-size: 1rem;
+  }
+
+  .down h2{
+    font-size: 1.2rem;
+  }
+
+  button{
+    margin-left: 8rem;
+    width: 11rem;
+    height: 2.7rem;
+    font-size: 1.2rem;
+  }
 }
