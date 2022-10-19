@@ -18,6 +18,7 @@
     background-image: url(images/bg-pattern.svg);
     background-repeat: no-repeat;
     background-position: 0 -75px;
+    background-size: auto;
     background-color: hsl(230, 100%, 99%);
     width: 100%;
     min-width: 340px;
@@ -311,10 +312,14 @@ margin: auto;
   box-shadow: 1px 5px 20px rgb(37, 172, 165);
 }
 
-  
+  /*
 @media (min-width: 767px){
+  html{
+    font-size: 1.2rem;
+  }
+ 
   .top{
-    font-size: 1rem;
+    font-size: 0.8rem;
     letter-spacing: 0.04rem;
     background-size: 8rem;
     height: 27%;
@@ -391,14 +396,17 @@ margin: auto;
   }
 
   button{
-    margin-left: 6rem;
+    margin-left: 4rem;
+    font-size: 0.9rem;
   }
 
 }
 
 
-@media (min-width: 1439px){
-  
+@media (min-width: 1024px){
+  html{
+    font-size: 1.3rem;
+  }
   .down{
     height: 55%;
   }
@@ -415,7 +423,7 @@ margin: auto;
     h3{
       font-size: 2.7rem;
       letter-spacing: 0;
-      padding-left: 9rem;
+      padding-left: 5rem;
     }
   }
   
@@ -442,9 +450,19 @@ margin: auto;
   }
 
   button{
-    margin-left: 8rem;
+    margin-left: 5rem;
     width: 11rem;
     height: 2.7rem;
     font-size: 1.2rem;
   }
 }
+
+@media (min-width: 1200px){
+  html{
+    font-size: 1.5rem;
+  }
+
+  main{
+    background-size: auto 52%;
+  }
+}*/
