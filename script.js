@@ -3,11 +3,12 @@ const output = document.getElementById('price');
 const pageviews = document.getElementById('pageviews');
 let arrayInitialPrices = [8, 12, 16, 24, 36];
 let arrayPageviews = ['10K','50K','100K','500K','1M'];
-const discountNumber = Number((document.getElementById('discount')).innerHTML);
+let discountNumber = Number((document.getElementById('discount')).innerHTML);
 inputValue = input.value;
 
 /*To add more values, just change input 'max' on index.html 
-and increase array inicial prices and its correspondent array pageviews (only whole numbers with discount)
+and increase array inicial prices and its correspondent array pageviews.
+
 To change the discount tax, just change number on span #discount in HTML*/
 
 
